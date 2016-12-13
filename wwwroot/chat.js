@@ -1,7 +1,8 @@
 var userName = prompt("Enter your name: ");
 var chat = $.connection.chatHub;
 chat.client.messageReceived = function (originatorUser, message) {
-    $("#messages").append('<li><strong>' + originatorUser + '</strong>: ' + message);
+    $("#messages").append('<div class="message-row">' + generateChip(originatorUser) + '<span class="message-text">' + message + '</span></div>');
+    
 };
 
 chat.client.getConnectedUsers = function (userList) {
@@ -27,7 +28,13 @@ $("#messageBox").keyup(function (event) {
 });
 
 function addUser(user){
-    $("#userList").append('<li>' + user + '</li>');
+    $("#userList").append('<li>' + generateChip(user) + '</li>');
+}
+
+function generateChip(originatorUser){
+    return '<span class="mdl-chip mdl-chip--contact">'+
+    '<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">'+originatorUser.substring(0,1).toUpperCase()+'</span>' +
+    '<span class="mdl-chip__text">'+originatorUser+'</span></span>';
 }
 
 $.connection.hub.logging = true;

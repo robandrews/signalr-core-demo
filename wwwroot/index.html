@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-light_blue.min.css" />
+    <link rel="stylesheet" href="style.css">
     <title>Awesome Chat Application</title>
 	<meta charset="utf-8" />
 </head>
 <body>
-    <style type="text/css">
-        .userListDiv{
-            float: right;
-        }
-    </style>
+    <div class="wrapper">
+        <header class="header">Random Chatter.</header>
 
-    <ul id="messages"></ul>
-    <input type="text" id="messageBox" />
-    <input type="button" id="sendMessage" value="Send Message!" />
-    <div class="userListDiv">
-        <ul id="userList"> </ul>
+        <div class="main-messages">
+            <div id="messages"></div>
+        </div>
+
+        <div class="user-list-div">
+            <ul id="userList"> </ul>
+        </div>
+
+        <div class="chat-input">
+            <div class="mdl-textfield mdl-js-textfield msg-input chat-input-child">
+                <textarea class="mdl-textfield__input" type="text" rows= "1" id="messageBox" ></textarea>
+                <label class="mdl-textfield__label" for="messageBox">Message...</label>
+                
+            </div>
+
+            <button class="mdl-button mdl-js-button mdl-button--raised chat-input-child" id="sendMessage">
+                Send Message >
+            </button>
+        </div>
     </div>
 
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.1.min.js"></script>
     <script src="signalr/hubs"></script>
     <script src="chat.js"></script>
+    
 </body>
 </html>

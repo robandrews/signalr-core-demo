@@ -1,0 +1,99 @@
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+    background:rgba(96,125,139, 1); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(96,125,139, 1),rgba(3,169,244,0.3)); /* For Safari 5.1 to 6.0.3 */
+    background: -o-linear-gradient(rgba(96,125,139, 1),rgba(3,169,244,0.3)); /* For Opera 11.1 to 12.0.3 */
+    background: -moz-linear-gradient(rgba(96,125,139, 1),rgba(3,169,244,0.3)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(96,125,139, 1),rgba(3,169,244,0.3)); /* Standard syntax */
+    height: 40px;
+    font-weight: 400;
+    font-size:2.0em;
+    width:100%;
+    flex-basis: auto;
+}
+
+.main-messages{
+    text-align: left;
+    overflow-y: auto;
+    min-height: 100px;
+}
+
+.message-row{
+    padding:10px;
+    margin:5px;
+    background-color:lightblue;
+    border-radius: 3px; 
+}
+
+.message-text{
+    padding-left:15px;
+    font-size: 1.3em;
+}
+
+.user-list-div{
+    background: rgba(0, 0, 255, 0.3);
+    flex-basis: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+li {
+    margin:5px;
+}
+
+@media all and (min-width: 600px) {
+  .user-list-div {
+    flex: 1 auto;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main-messages {
+    flex: 12 0px;
+  }
+
+  .user-list-div {
+    order: 1;
+  }
+
+  .main-messages {
+    order: 2;
+  }
+
+  .chat-input {
+    order: 3;
+    justify-content: flex-end;
+  }
+}
+
+.chat-input {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    align-items: center;
+}
+
+.chat-input-child {
+    margin: auto;
+}
+
+.msg-input{
+    width:80%;
+    margin-top:auto;
+}
