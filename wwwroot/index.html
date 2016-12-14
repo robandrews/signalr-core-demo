@@ -4,20 +4,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-light_blue.min.css" />
     <link rel="stylesheet" href="style.css">
-    <title>Awesome Chat Application</title>
+    <title>Random Chatter</title>
 	<meta charset="utf-8" />
 </head>
 <body>
-    <div class="wrapper">
+    <div class="viewport vbox">
         <header class="header">Random Chatter.</header>
 
-        <div class="main-messages">
-            <div id="messages"></div>
-        </div>
+        <section class="main hbox">
+            <div class="user-list-div">
+                <ul id="userList"> </ul>
+            </div>
 
-        <div class="user-list-div">
-            <ul id="userList"> </ul>
-        </div>
+            <div class="main-messages">
+                <div id="messages"></div>
+            </div>
+        </section>
 
         <div class="chat-input">
             <div class="mdl-textfield mdl-js-textfield msg-input chat-input-child">

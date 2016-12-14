@@ -1,8 +1,9 @@
 var userName = prompt("Enter your name: ");
 var chat = $.connection.chatHub;
 chat.client.messageReceived = function (originatorUser, message) {
-    $("#messages").append('<div class="message-row">' + generateChip(originatorUser) + '<span class="message-text">' + message + '</span></div>');
-    
+    var container = $("#messages");
+    container.append('<div class="message-row">' + generateChip(originatorUser) + '<span class="message-text">' + message + '</span></div>');
+    container[0].scrollTop = container[0].scrollHeight;    
 };
 
 chat.client.getConnectedUsers = function (userList) {
@@ -23,8 +24,10 @@ $("#sendMessage").click(function () {
 });
 
 $("#messageBox").keyup(function (event) {
-    if (event.keyCode == 13)
+    if (event.keyCode == 13){
+        event.preventDefault()
         $("#sendMessage").click();
+    }   
 });
 
 function addUser(user){
