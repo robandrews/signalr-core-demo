@@ -77,7 +77,7 @@
 
 .main-messages{
     text-align: left;
-    overflow-y: auto;
+    overflow-y: scroll;
     margin-bottom:75px;
 }
 

@@ -2,8 +2,10 @@ var userName = prompt("Enter your name: ");
 var chat = $.connection.chatHub;
 chat.client.messageReceived = function (originatorUser, message) {
     var container = $("#messages");
+    console.log("Beginning: " + container.scrollTop())
     container.append('<div class="message-row">' + generateChip(originatorUser) + '<span class="message-text">' + message + '</span></div>');
-    container[0].scrollTop = container[0].scrollHeight;    
+    var height = container[0].scrollHeight;
+    container.animate({scrollTop: height});
 };
 
 chat.client.getConnectedUsers = function (userList) {
